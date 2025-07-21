@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/lib/supabaseClient";
-// Importa funções específicas
+// Importa funções de formatação
 import {
   formatCPF,
   formatTelefone,
@@ -58,7 +58,6 @@ function Clientes() {
   };
 
   // Carregar clientes do Supabase
-  // Substitua a função carregarClientes por esta versão corrigida:
 
   const carregarClientes = async () => {
     try {
@@ -71,8 +70,7 @@ function Clientes() {
       if (error) {
         throw error;
       }
-
-      console.log("Clientes carregados:", data); // Console.log dentro do escopo correto
+      console.log("Clientes carregados:", data);
       setClientes(data || []);
     } catch (error) {
       console.error("Erro ao carregar clientes:", error);
@@ -184,6 +182,7 @@ function Clientes() {
     setIsDialogOpen(true);
   };
 
+  // Função para deletar cliente
   const handleDelete = async (id) => {
     try {
       const { error } = await supabase.from("clientes").delete().eq("id", id);
@@ -221,7 +220,6 @@ function Clientes() {
     );
   }
 
-  // Adicione antes do return
   console.log("Estado atual:", {
     loading,
     clientesLength: clientes.length,
@@ -288,7 +286,7 @@ function Clientes() {
                   <Label htmlFor="cpf">CPF</Label>
                   <Input
                     id="cpf"
-                    value={formatCPF(formData.cpf)} // ← Aqui usa formData, não cliente
+                    value={formatCPF(formData.cpf)}
                     onChange={(e) => {
                       const numbersOnly = removeFormatacao(e.target.value);
                       if (numbersOnly.length <= 11) {
@@ -302,7 +300,7 @@ function Clientes() {
                   <Label htmlFor="telefone">Telefone</Label>
                   <Input
                     id="telefone"
-                    value={formatTelefone(formData.telefone)} // ← Aqui também formData
+                    value={formatTelefone(formData.telefone)}
                     onChange={(e) => {
                       const numbersOnly = removeFormatacao(e.target.value);
                       if (numbersOnly.length <= 11) {
@@ -318,7 +316,7 @@ function Clientes() {
                   <Label htmlFor="cep">CEP</Label>
                   <Input
                     id="cep"
-                    value={formatCEP(formData.cep)} // ← Formatação do CEP
+                    value={formatCEP(formData.cep)}
                     onChange={(e) => {
                       const numbersOnly = removeFormatacao(e.target.value);
                       if (numbersOnly.length <= 8) {

@@ -55,7 +55,7 @@ function Dashboard() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        // Aqui você substituiria pelas chamadas reais ao Supabase:
+        // chamadas ao Supabase:
         const { data: vendas } = await supabase.from("vendas").select("*");
         const { data: clientes } = await supabase.from("clientes").select("*");
         const { data: produtos } = await supabase.from("produtos").select("*");

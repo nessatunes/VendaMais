@@ -40,7 +40,7 @@ function Estoque() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulando busca no Supabase (substitua pela sua implementação)
+    // Simulando busca no Supabase
     const fetchProdutos = async () => {
       setLoading(true);
       try {

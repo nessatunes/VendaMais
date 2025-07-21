@@ -44,18 +44,18 @@ function Produtos() {
   });
   const { toast } = useToast();
 
-  // Fetch products and categories from Supabase
+  // Buscar produtos e categorias do Supabase
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch products
+        // Buscar products
         const { data: produtosData, error: produtosError } = await supabase
           .from("produtos")
           .select("*");
         if (produtosError) throw produtosError;
         setProdutos(produtosData || []);
 
-        // Fetch categories
+        // Buscar categories
         const { data: categoriasData, error: categoriasError } = await supabase
           .from("categorias")
           .select("categoria");
@@ -76,9 +76,9 @@ function Produtos() {
 
   const saveCategorias = async (newCategorias) => {
     try {
-      // Delete existing categories
+      // Excluir categorias existentes
       await supabase.from("categorias").delete().gte("id", 0);
-      // Insert new categories
+      // Inserir novas categorias
       await supabase.from("categorias").insert(
         newCategorias.map((categoria) => ({
           id: uuidv4(),
