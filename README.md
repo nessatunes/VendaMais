@@ -22,7 +22,7 @@ Sistema simples, para controle de vendas de pequenos comerciantes autonomos, com
 
 ### Tela Dashboard
 
-![Tela de Dashboard](./assets/dashboard.png)
+![Tela de Dashboard](./assets/Dashboard.png)
 
 ### Tela Clientes e cadastro
 
