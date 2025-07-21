@@ -47,7 +47,7 @@ Este projeto utiliza um conjunto moderno de bibliotecas e ferramentas para const
 
 👉Sobre
 
-Sistema simples, para controle de vendas de pequenos comerciantes autonomos, com menu de Dashboard, Clientes, Produtos, Vendas, Relatórios e Estoque, podendo ter uma vizualização rápida, cadastrar clientes, produtos, realizar vendas.
+Sistema simples, para controle de vendas de pequenos comerciantes autonomos, insentivo para a inclusão digital, conta com menu de Dashboard, Clientes, Produtos, Vendas, Relatórios e Estoque, podendo ter uma vizualização rápida, cadastrar clientes, produtos, realizar vendas.
 
 👉Funcionalidades do Projeto
 
